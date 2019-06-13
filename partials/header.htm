@@ -1,0 +1,66 @@
+[viewBag]
+
+[staticMenu MainMenu]
+code = "mainmenu"
+==
+<header id="header-wrap">
+        <div id="roof" class="hidden-xs">
+            <div class="container">
+                <div class="col-md-4 col-sm-4">
+                    <div class="info-bar-address">
+                    </div>
+                </div>
+                <div class="col-md-8 col-sm-8">
+                    <div class="quick-contacts">
+                        <span> <a href="">Información práctica</a> </span>
+                        <span> <a href="">Sugerencias</a> </span>
+                        <span> <a href="">Acerca de</a> </span>
+                        <span> <a href=""><i class="fab fa-facebook"></i></a> </span>
+                        <span> <a href=""><i class="fab fa-facebook"></i></a> </span>
+                        <span> <a href=""><i class="fab fa-facebook"></i></a> </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="navigation-menu">
+            <nav class="navbar navbar-default navbar-event">
+                <div class="container">
+
+                    <div class="navbar-header col-md-2">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="/"><img src="{{ 'assets/img/logo.svg'| theme }}" width="200rem" height="72px" alt=""></a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="navbar">
+                        {% if MainMenu.menuItems %}
+                            <ul class="nav navbar-nav navbar-right">
+                                {% partial MainMenu ~ "::items" items=MainMenu.menuItems %}
+                            </ul>
+                        {% endif %}
+                    </div>
+                </div>
+                <ul class="wpb-mobile-menu">
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="#">Pages</a>
+                        <ul class="dropdown">
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="pricing.html">Pricing Table</a></li>
+                            <li><a href="sponsors.html">Sponsors</a></li>
+                            <li><a href="single-post.html">Single Post</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="schedule.html">Schedule</a></li>
+                    <li><a href="speakers.html">Speakers</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="pricing.html">Buy Tickets</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+
+    </header>
