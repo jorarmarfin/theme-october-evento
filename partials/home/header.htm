@@ -22,7 +22,6 @@ code = "mainmenu"
     <div class="navigation-menu">
         <nav class="navbar navbar-default navbar-event">
             <div class="container">
-
                 <div class="navbar-header col-md-2">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
                         <span class="sr-only">Toggle navigation</span>
@@ -40,23 +39,14 @@ code = "mainmenu"
                     {% endif %}
                 </div>
             </div>
-            <ul class="wpb-mobile-menu">
-                <li class="active"><a href="index.html">Home</a></li>
-                <li><a href="#">Pages</a>
-                    <ul class="dropdown">
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="pricing.html">Pricing Table</a></li>
-                        <li><a href="sponsors.html">Sponsors</a></li>
-                        <li><a href="single-post.html">Single Post</a></li>
-                    </ul>
-                </li>
-                <li><a href="schedule.html">Schedule</a></li>
-                <li><a href="speakers.html">Speakers</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="pricing.html">Buy Tickets</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+            <div id="navbarmobile">
+                <ul class="wpb-mobile-menu">
+                    {% if MainMenu.menuItems %}
+                        {% partial MainMenu ~ "::items-mobile" items=MainMenu.menuItems %}
+                    {% endif %}
+    
+                </ul>
+            </div>
         </nav>
     </div>
 

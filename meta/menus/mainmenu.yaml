@@ -2,15 +2,6 @@ name: Mainmenu
 items:
     -
         title: Inicio
-        type: url
-        url: /
-        code: ''
-        viewBag:
-            isHidden: '0'
-            cssClass: ''
-            isExternal: '0'
-    -
-        title: Programa
         nesting: ''
         type: url
         url: /
@@ -18,6 +9,15 @@ items:
         reference: ''
         cmsPage: ''
         replace: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Programa
+        type: url
+        url: /
+        code: ''
         viewBag:
             isHidden: '0'
             cssClass: dropdown

@@ -16,6 +16,7 @@ default = 0
     <title>Impression | Bootstrap HTML5 Conference and Event Template</title>
 
     <link rel="stylesheet" type="text/css" href="{{ 'assets/css/bootstrap.min.css'|theme }}">
+    <link rel="stylesheet" type="text/css" href="{{ 'assets/css/custom.css'|theme }}">
     <link rel="stylesheet" type="text/css" href="{{ 'assets/css/main.css'|theme }}">
     <link rel="stylesheet" type="text/css" href="{{ 'assets/css/responsive.css'|theme }}">
     <link rel="stylesheet" type="text/css" href="{{ 'assets/fonts/font-awesome.min.css'|theme }}">
@@ -35,29 +36,30 @@ default = 0
     <![endif]-->
 </head>
 <body>
-    {% partial 'header' %}
-    {% partial 'carousel' %}
-    {% partial 'countdown' %}
-    {% partial 'event' %}
-    {% partial 'featured' %}
-    {% partial 'schedule' %}
-    {% partial 'sponsors' %}
-    {% partial 'gallery' %}
-    {% partial 'speakers' %}
-    {% partial 'blog' %}
-    {% partial 'pricing' %}
-    {% partial 'map' %}
+    {% partial 'home/header' %}
+    {% partial 'home/carousel' %}
+    {% partial 'home/countdown' %}
+    {% partial 'home/event' %}
+    {% partial 'home/featured' %}
+    {% partial 'home/schedule' %}
+    {% partial 'home/sponsors' %}
+    {% partial 'home/gallery' %}
+    {% partial 'home/speakers' %}
+    {% partial 'home/blog' %}
+    {% partial 'home/pricing' %}
+    {% partial 'home/map' %}
     <div class="main-content">
         {% page %}
-        {% partial 'contact' %}
-        {% partial 'footer' %}
+        {% partial 'home/contact' %}
+        {% partial 'home/footer' %}
     </div>
-    {% partial 'copyright' %}
+    {% partial 'home/copyright' %}
     <a href="#" class="back-to-top">
         <i class="icon-arrow-up"></i>
     </a>
     <div class="bottom"> <a href="#" class="settings"></a> </div>
     <script data-cfasync="false" src="http://demo.graygrids.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="{{ 'assets/js/custom.js'|theme }}"></script>
     <script src="{{ 'assets/js/jquery.min.js'|theme }}"></script>
     <script src="{{ 'assets/js/bootstrap.min.js'| theme }}"></script>
     <script src="{{ 'assets/js/jquery.countdown.min.js'| theme }}"></script>
