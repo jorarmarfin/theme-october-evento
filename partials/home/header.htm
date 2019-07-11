@@ -32,19 +32,36 @@ code = "mainmenu"
                     <a class="navbar-brand" href="/"><img src="{{ 'assets/img/logo1.png'| theme }}"  alt=""></a>
                 </div>
                 <div class="collapse navbar-collapse" id="navbar">
-                    {% if MainMenu.menuItems %}
-                        <ul class="nav navbar-nav navbar-right">
-                            {% partial MainMenu ~ "::items" items=MainMenu.menuItems %}
-                        </ul>
-                    {% endif %}
+                    <ul class="nav navbar-nav navbar-right">
+                    {% for item in MainMenu.menuItems %}
+                        {% if item.items %}
+                            <li class="dropdown {{ item.isActive ? 'active' : '' }} {{ item.isChildActive ? 'child-active' : '' }} {{ item.viewBag.cssClass }}"><a class="dropdown-toggle" data-toggle="dropdown" href="{{ item.url }}">{{ item.title }} <span class="caret"></span></a>
+                            <ul  class="dropdown-menu">
+                                {% for subitem in item.items %}
+                                <li><a href="{{ subitem.url }}">{{ subitem.title }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        {% else %}
+                            <li class="{{ item.isActive ? 'active' : '' }} {{ item.isChildActive ? 'child-active' : '' }} {{ item.viewBag.cssClass }}"><a href="{{ item.url }}">{{ item.title }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+                    </ul>
                 </div>
             </div>
             <div id="navbarmobile">
                 <ul class="wpb-mobile-menu">
-                    {% if MainMenu.menuItems %}
-                        {% partial MainMenu ~ "::items-mobile" items=MainMenu.menuItems %}
+                {% for item in MainMenu.menuItems %}
+                    {% if item.items %}
+                        <li class="dropdown {{ item.isActive ? 'active' : '' }} {{ item.isChildActive ? 'child-active' : '' }} {{ item.viewBag.cssClass }}"><a href="{{ item.url }}">{{ item.title }} </a>
+                        <ul  class="dropdown">
+                            {% for subitem in item.items %}
+                            <li><a href="{{ subitem.url }}">{{ subitem.title }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        <li class="{{ item.isActive ? 'active' : '' }} {{ item.isChildActive ? 'child-active' : '' }} {{ item.viewBag.cssClass }}"><a href="{{ item.url }}">{{ item.title }}</a></li>
                     {% endif %}
-    
+                {% endfor %}
                 </ul>
             </div>
         </nav>
